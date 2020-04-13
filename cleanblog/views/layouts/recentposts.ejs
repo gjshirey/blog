@@ -1,0 +1,22 @@
+<!-- Made Template for other pages-->
+<section class="box article-list">
+    <h2 class="icon fa-file-alt">Recent Posts</h2>
+    <% for (let i = 0; i < blogposts.length; i++) { %>
+    <!-- Excerpt -->
+    <article class="box excerpt">
+        <a href="#" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+        <div>
+            <header>
+                <span class="date"><%= blogposts[i].datePosted.toDateString() %>
+                    by <%=blogposts[i].username %></span>
+                <a href="/post/<%= blogposts[i]._id %>">
+                    <h3>
+                        <%= blogposts[i].title %>
+                    </h3>
+                </a>
+            </header>
+            <p><%= blogposts[i].body %></p>
+        </div>
+    </article>
+    <% } %>
+</section>
